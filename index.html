@@ -1,251 +1,306 @@
-<style>
-  * {
-    box-sizing: border-box;
-  }
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q版小天地</title>
 
-  body {
-    margin: 0;
-    font-family: "Arial", "Microsoft JhengHei", sans-serif;
-    background: #fffbea;
-    color: #6b5a3f;
-  }
-
-  /* 導覽列 */
-  nav {
-    height: 65px;
-    background: #f7d774;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 40px;
-    box-shadow: 0 3px 10px rgba(120, 95, 40, 0.12);
-  }
-
-  nav .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #6b532d;
-  }
-
-  nav a {
-    color: #6b532d;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-    transition: 0.2s;
-  }
-
-  nav a:hover {
-    color: #a47618;
-  }
-
-  /* 主區域 */
-  .hero {
-    min-height: calc(100vh - 65px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 70px;
-    padding: 50px 20px;
-
-    background:
-      radial-gradient(circle at 15% 20%, #fff3bf 0 7%, transparent 8%),
-      radial-gradient(circle at 85% 75%, #ffedaa 0 6%, transparent 7%),
-      #fffbea;
-  }
-
-  .text {
-    max-width: 450px;
-  }
-
-  .text h1 {
-    font-size: 52px;
-    margin: 0 0 15px;
-    color: #dda92f;
-  }
-
-  .text p {
-    font-size: 20px;
-    line-height: 1.8;
-    color: #756347;
-  }
-
-  /* 按鈕 */
-  .btn {
-    border: none;
-    background: #f4c84b;
-    color: #6b532d;
-    padding: 14px 28px;
-    border-radius: 30px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    box-shadow: 0 5px 0 #d8a82e;
-    transition: 0.2s;
-  }
-
-  .btn:hover {
-    transform: translateY(-3px);
-    background: #ffd964;
-  }
-
-  .btn:active {
-    transform: translateY(3px);
-    box-shadow: 0 2px 0 #d8a82e;
-  }
-
-  /* Q版角色 */
-  .character {
-    width: 280px;
-    height: 280px;
-    background: #fff0b3;
-    border-radius: 50%;
-    position: relative;
-    box-shadow: 0 12px 25px rgba(215, 170, 60, 0.25);
-    animation: float 3s ease-in-out infinite;
-  }
-
-  /* 耳朵 */
-  .ear {
-    width: 80px;
-    height: 100px;
-    background: #ffe59a;
-    border-radius: 50%;
-    position: absolute;
-    top: -35px;
-  }
-
-  .ear.left {
-    left: 35px;
-    transform: rotate(-25deg);
-  }
-
-  .ear.right {
-    right: 35px;
-    transform: rotate(25deg);
-  }
-
-  /* 眼睛 */
-  .eye {
-    width: 28px;
-    height: 38px;
-    background: #5e4b32;
-    border-radius: 50%;
-    position: absolute;
-    top: 105px;
-  }
-
-  .eye::after {
-    content: "";
-    width: 8px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 6px;
-    left: 6px;
-  }
-
-  .eye.left {
-    left: 75px;
-  }
-
-  .eye.right {
-    right: 75px;
-  }
-
-  /* 腮紅 */
-  .cheek {
-    width: 40px;
-    height: 20px;
-    background: #f5bd8e;
-    border-radius: 50%;
-    position: absolute;
-    top: 155px;
-  }
-
-  .cheek.left {
-    left: 35px;
-  }
-
-  .cheek.right {
-    right: 35px;
-  }
-
-  /* 嘴巴 */
-  .mouth {
-    width: 25px;
-    height: 15px;
-    border-bottom: 5px solid #5e4b32;
-    border-radius: 50%;
-    position: absolute;
-    top: 160px;
-    left: 128px;
-  }
-
-  /* 飄動 */
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0);
+  <style>
+    * {
+      box-sizing: border-box;
     }
 
-    50% {
-      transform: translateY(-15px);
+    body {
+      margin: 0;
+      font-family: "Arial", "Microsoft JhengHei", sans-serif;
+      background: #fffbea;
+      color: #6b5a3f;
     }
-  }
 
-  /* 手機版 */
-  @media (max-width: 700px) {
+    /* 導覽列 */
     nav {
-      padding: 0 20px;
+      height: 65px;
+      background: #f7d774;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
+      box-shadow: 0 3px 10px rgba(120, 95, 40, 0.12);
+    }
+
+    nav .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #6b532d;
     }
 
     nav a {
-      display: none;
+      color: #6b532d;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: 0.2s;
     }
 
+    nav a:hover {
+      color: #a47618;
+    }
+
+    /* 主區域 */
     .hero {
-      flex-direction: column-reverse;
-      gap: 30px;
-      text-align: center;
+      min-height: calc(100vh - 65px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 70px;
+      padding: 50px 20px;
+      background: #fffbea;
+    }
+
+    .text {
+      max-width: 450px;
     }
 
     .text h1 {
-      font-size: 40px;
+      font-size: 52px;
+      margin: 0 0 15px;
+      color: #dda92f;
     }
 
+    .text p {
+      font-size: 20px;
+      line-height: 1.8;
+      color: #756347;
+    }
+
+    /* 按鈕 */
+    .btn {
+      border: none;
+      background: #f4c84b;
+      color: #6b532d;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #d8a82e;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      background: #ffd964;
+    }
+
+    .btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 #d8a82e;
+    }
+
+    /* Q版角色 */
     .character {
-      width: 220px;
-      height: 220px;
+      width: 280px;
+      height: 280px;
+      background: #fff0b3;
+      border-radius: 50%;
+      position: relative;
+      box-shadow: 0 12px 25px rgba(215, 170, 60, 0.25);
+      animation: float 3s ease-in-out infinite;
     }
 
+    /* 耳朵 */
+    .ear {
+      width: 80px;
+      height: 100px;
+      background: #ffe59a;
+      border-radius: 50%;
+      position: absolute;
+      top: -35px;
+    }
+
+    .ear.left {
+      left: 35px;
+      transform: rotate(-25deg);
+    }
+
+    .ear.right {
+      right: 35px;
+      transform: rotate(25deg);
+    }
+
+    /* 眼睛 */
     .eye {
-      top: 85px;
+      width: 28px;
+      height: 38px;
+      background: #5e4b32;
+      border-radius: 50%;
+      position: absolute;
+      top: 105px;
+    }
+
+    .eye::after {
+      content: "";
+      width: 8px;
+      height: 10px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 6px;
+      left: 6px;
     }
 
     .eye.left {
-      left: 55px;
+      left: 75px;
     }
 
     .eye.right {
-      right: 55px;
+      right: 75px;
     }
 
+    /* 腮紅 */
     .cheek {
-      top: 130px;
+      width: 40px;
+      height: 20px;
+      background: #f5bd8e;
+      border-radius: 50%;
+      position: absolute;
+      top: 155px;
     }
 
     .cheek.left {
-      left: 25px;
+      left: 35px;
     }
 
     .cheek.right {
-      right: 25px;
+      right: 35px;
     }
 
+    /* 嘴巴 */
     .mouth {
-      top: 135px;
-      left: 98px;
+      width: 25px;
+      height: 15px;
+      border-bottom: 5px solid #5e4b32;
+      border-radius: 50%;
+      position: absolute;
+      top: 160px;
+      left: 128px;
     }
-  }
-</style>
+
+    /* 飄動效果 */
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    /* 手機版 */
+    @media (max-width: 700px) {
+      nav {
+        padding: 0 20px;
+      }
+
+      nav a {
+        display: none;
+      }
+
+      .hero {
+        flex-direction: column-reverse;
+        gap: 30px;
+        text-align: center;
+      }
+
+      .text h1 {
+        font-size: 40px;
+      }
+
+      .character {
+        width: 220px;
+        height: 220px;
+      }
+
+      .eye {
+        top: 85px;
+      }
+
+      .eye.left {
+        left: 55px;
+      }
+
+      .eye.right {
+        right: 55px;
+      }
+
+      .cheek {
+        top: 130px;
+      }
+
+      .cheek.left {
+        left: 25px;
+      }
+
+      .cheek.right {
+        right: 25px;
+      }
+
+      .mouth {
+        top: 135px;
+        left: 98px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">🐰 Q版小天地</div>
+
+    <div>
+      <a href="#">首頁</a>
+      <a href="#">關於我</a>
+      <a href="#">聯絡</a>
+    </div>
+  </nav>
+
+  <main class="hero">
+
+    <div class="text">
+      <h1>嗨！你好 ♡</h1>
+
+      <p>
+        歡迎來到我的 Q 版小天地！<br>
+        這裡是一個溫暖又可愛的小空間。
+      </p>
+
+      <button class="btn" onclick="sayHello()">
+        點我一下 ✨
+      </button>
+    </div>
+
+    <div class="character">
+      <div class="ear left"></div>
+      <div class="ear right"></div>
+
+      <div class="eye left"></div>
+      <div class="eye right"></div>
+
+      <div class="cheek left"></div>
+      <div class="cheek right"></div>
+
+      <div class="mouth"></div>
+    </div>
+
+  </main>
+
+  <script>
+    function sayHello() {
+      alert("嗨嗨！🐰 很高興見到你！");
+    }
+  </script>
+
+</body>
+</html>
